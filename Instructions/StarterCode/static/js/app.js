@@ -31,20 +31,12 @@ button.on('click', function() {
 
     var tbody = d3.select('tbody');
 
+    tbody.html("")
+
     filterData.forEach(sighting => {
         var row = tbody.append('tr');
         Object.entries(sighting).forEach(([key, value]) => row.append('td').text(value));
     });
 });
 
-// it shows up in the console log but how to get it on screen?
-
-// select all tr in table to remove then append with filtered by date
-
-button.on('click', function() {
-    var searchFilter = d3.select('#datetime');
-    var searchValue = searchFilter.property('value');
-
-    var filterData = tableData.filter(sighting => sighting.datetime === searchValue);
-    console.log(filterData);
-})
+// it shows up at the end but all the old info stays up too

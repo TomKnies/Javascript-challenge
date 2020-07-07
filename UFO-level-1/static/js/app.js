@@ -31,10 +31,12 @@ button.on('click', function() {
 
     var tbody = d3.select('tbody');
 
+    tbody.html("")
+
     filterData.forEach(sighting => {
         var row = tbody.append('tr');
         Object.entries(sighting).forEach(([key, value]) => row.append('td').text(value));
     });
 });
 
-// it shows up in the console log but how to get it on screen?
+// it shows up at the end but all the old info stays up too
