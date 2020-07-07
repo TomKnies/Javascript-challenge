@@ -38,3 +38,13 @@ button.on('click', function() {
 });
 
 // it shows up in the console log but how to get it on screen?
+
+// select all tr in table to remove then append with filtered by date
+
+button.on('click', function() {
+    var searchFilter = d3.select('#datetime');
+    var searchValue = searchFilter.property('value');
+
+    var filterData = tableData.filter(sighting => sighting.datetime === searchValue);
+    console.log(filterData);
+})
